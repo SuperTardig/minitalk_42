@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:22 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/11 09:17:53 by bperron          ###   ########.fr       */
+/*   Updated: 2022/05/11 11:44:27 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	sendbin(char *str, int pid)
 			else
 				kill (pid, SIGUSR1);
 			bin /= 2;
-			usleep(50);
+			usleep(100);
 		}
 		str++;
 	}
@@ -34,7 +34,7 @@ void	sendbin(char *str, int pid)
 	while (bin-- > 0)
 	{
 		kill(pid, SIGUSR1);
-		usleep(50);
+		usleep(100);
 	}
 }
 
