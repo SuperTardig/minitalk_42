@@ -6,17 +6,11 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:15 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/10 14:15:45 by bperron          ###   ########.fr       */
+/*   Updated: 2022/05/11 12:47:11 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-typedef struct s_character
-{
-	unsigned char	c;
-	int				i;
-}	t_char;
 
 t_char	g_character;
 
