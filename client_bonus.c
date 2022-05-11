@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:22 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/11 09:17:53 by bperron          ###   ########.fr       */
+/*   Updated: 2022/05/10 14:03:59 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "minitalk_bonus.h"
+
+static void	sighandler(int signum, siginfo_t *s_info, void *content)
+{
+	static int	nb = 0;
+
+	(void) s_info;
+	(void) content;
+	if (signum == SIGUSR1)
+		nb++;
+	else if (signum == SIGUSR2)
+		ft_printf ("Number of characters written : %d\n", nb);
+}
 
 void	sendbin(char *str, int pid)
 {
@@ -62,7 +74,12 @@ int	main(int ac, char *av[])
 {
 	int					pid;
 	int					i;
+	struct sigaction	s_sig;
 
+	ft_memset(&s_sig, 0, sizeof(s_sig));
+	s_sig.sa_sigaction = &sighandler;
+	sigaction(SIGUSR1, &s_sig, NULL);
+	sigaction(SIGUSR2, &s_sig, NULL);
 	i = 0;
 	pid = ft_atoi(av[1]);
 	if (error(ac, av, pid) == 1)
