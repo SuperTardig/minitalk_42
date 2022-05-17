@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:22 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/17 10:47:19 by bperron          ###   ########.fr       */
+/*   Updated: 2022/05/17 11:26:12 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sendbin(char *str, int pid)
 
 int	error(int ac, char *av[], int pid)
 {
-	if (ac > 3 || ac < 3)
+	if (ac > 3)
 	{
 		ft_printf("The number of argument entered is incorrect.\n");
 		return (1);
