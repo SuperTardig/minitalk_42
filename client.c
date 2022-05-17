@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:22 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/11 11:44:27 by bperron          ###   ########.fr       */
+/*   Updated: 2022/05/17 10:47:05 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,11 @@ int	main(int ac, char *av[])
 	int					i;
 
 	i = 0;
+	if (ac < 3)
+	{
+		ft_printf("The number of argument entered is incorrect.\n");
+		return (1);
+	}
 	pid = ft_atoi(av[1]);
 	if (error(ac, av, pid) == 1)
 		return (1);
