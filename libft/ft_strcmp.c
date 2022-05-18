@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/30 08:55:28 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/11 13:39:19 by bperron          ###   ########.fr       */
+/*   Created: 2022/03/29 09:51:17 by bperron           #+#    #+#             */
+/*   Updated: 2022/05/18 10:47:58 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int			i;
-	int			signe;
-	long int	nb;
+#include "libft.h"
 
-	signe = 1;
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+
 	i = 0;
-	nb = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	if (str[i] == '-')
-		signe = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb *= 10;
-		nb += str[i] - 48;
-		i++;
-	}
-	return ((int) nb * signe);
+	return ((unsigned char) s1[i] - s2[i]);
 }
