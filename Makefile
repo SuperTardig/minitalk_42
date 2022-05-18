@@ -6,7 +6,7 @@
 #    By: bperron <bperron@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/06 10:16:37 by bperron           #+#    #+#              #
-#    Updated: 2022/05/18 11:06:36 by bperron          ###   ########.fr        #
+#    Updated: 2022/05/18 11:13:15 by bperron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,6 @@ $(SERVER): $(OBJS_SRV)
 	$(CC) $(CFLAGS) -o server $(OBJS_SRV) $(LIBFT_OBJS) $(FT_PRINTF_OBJS)
 
 $(CLIENT): $(OBJS_CLI)
-	make -C libft
-	make -C ft_printf
 	$(CC) $(CFLAGS) -o client $(OBJS_CLI) $(LIBFT_OBJS) $(FT_PRINTF_OBJS)
 
 bonus: $(OBJS_SRV_BONUS) $(OBJS_CLI_BONUS)
