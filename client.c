@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:22 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/17 11:25:57 by bperron          ###   ########.fr       */
+/*   Updated: 2022/05/23 09:07:32 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,12 @@ void	sendbin(char *str, int pid)
 
 int	error(int ac, char *av[], int pid)
 {
-	if (ac > 3)
+	if (pid > 99998 || pid < 1)
+	{
+		ft_printf("The PID is invalid.\n");
+		return (1);
+	}
+	else if (ac > 3 || ac < 3)
 	{
 		ft_printf("The number of argument entered is incorrect.\n");
 		return (1);
@@ -50,11 +55,7 @@ int	error(int ac, char *av[], int pid)
 		ft_printf("The string passed is empty.\n");
 		return (1);
 	}
-	else if (pid > 99998 || pid < 1)
-	{
-		ft_printf("The PID is invalid.\n");
-		return (1);
-	}
+
 	return (0);
 }
 
@@ -64,7 +65,7 @@ int	main(int ac, char *av[])
 	int					i;
 
 	i = 0;
-	if (ac < 3)
+	if (ac < 2)
 	{
 		ft_printf("The number of argument entered is incorrect.\n");
 		return (1);
