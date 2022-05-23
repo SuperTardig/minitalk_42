@@ -6,7 +6,7 @@
 /*   By: bperron <bperron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:40:22 by bperron           #+#    #+#             */
-/*   Updated: 2022/05/23 09:07:32 by bperron          ###   ########.fr       */
+/*   Updated: 2022/05/23 09:09:20 by bperron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ int	error(int ac, char *av[], int pid)
 		ft_printf("The string passed is empty.\n");
 		return (1);
 	}
-
 	return (0);
 }
 
