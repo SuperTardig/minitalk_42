@@ -5,4 +5,10 @@ The bonus for this project are as followed:
   - The server sends a message to the client after it finished receiving the message. I handled this by sending a null byte at the end of my message to let the server know the server know that the message was finished. It then sends a signal back to the client
   - Support for unicode characters, I didn't need to do anything special for this.
   # Usage
-  To us
+  To use this project you need to:
+  
+    1. Clone this repository
+    2. Go to the root of the repository
+    3. Run `make`
+    4. start the server with `./server`
+    5. start the client with `./client <pid> "<message>"`
